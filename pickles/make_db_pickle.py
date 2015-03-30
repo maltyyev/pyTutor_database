@@ -1,7 +1,7 @@
 import pickle
 from initdata import db
 
-dbfilename = '../people-pickle'
+dbfilename = '../dbs/people-pickle.pkl'
 
 def storeDbase(db=db, dbfilename=dbfilename):
     dbfile = open(dbfilename, 'wb')

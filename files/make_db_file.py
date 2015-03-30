@@ -1,7 +1,7 @@
 import sys
 from initdata import db
 
-dbfilename = '../people-file'
+dbfilename = '../dbs/people-file.txt'
 ENDDB = 'enddb'
 ENDREC = 'endrec'
 RECSEP = '=>'
