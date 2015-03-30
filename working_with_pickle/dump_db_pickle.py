@@ -1,4 +1,4 @@
-from make_db_file import loadDbase
+from working_with_pickle.make_db_pickle import loadDbase
 
 db = loadDbase()
 

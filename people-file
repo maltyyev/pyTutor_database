@@ -1,19 +1,19 @@
-bob
-name=>'Bob Smith'
-age=>42
-job=>'dev'
-pay=>30000
+tom
+name=>'Tom'
+age=>50
+job=>None
+pay=>0
 endrec
 sue
 name=>'Sue Jones'
 age=>45
 job=>'hdw'
-pay=>44000.0
+pay=>40000
 endrec
-tom
-name=>'Thomas Edison'
-age=>50
-job=>None
-pay=>0
+bob
+name=>'Bob Smith'
+age=>42
+job=>'dev'
+pay=>30000
 endrec
 enddb

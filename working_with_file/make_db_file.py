@@ -1,7 +1,7 @@
 import sys
 from initdata import db
 
-dbfilename = 'people-file'
+dbfilename = '../people-file'
 ENDDB = 'enddb'
 ENDREC = 'endrec'
 RECSEP = '=>'
@@ -17,7 +17,7 @@ def storeDbase(db, dbfilename=dbfilename):
     dbfile.close()
 
 def loadDbase(dbfilename=dbfilename):
-    dbfile = open(dbfilename)
+    dbfile = open(dbfilename, 'r')
     sys.stdin = dbfile
     db = {}
     key = input()
