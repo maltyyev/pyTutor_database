@@ -3,8 +3,8 @@ from tkinter import *
 from tkinter.messagebox import showerror
 from OOP.person import Person
 
-filename = 'dbs/shelve-class.shlv'
-fieldnames = ('name', 'age', 'job', 'pay')
+shelvename = 'dbs/shelve-class.shlv'
+fieldnames = ('name', 'age', 'pay', 'job')
 
 def makeWidgets():
     global entries
@@ -12,18 +12,14 @@ def makeWidgets():
     form = Frame(window)
     form.pack()
     entries = {}
-
-    for (ix, label) in enumerate(('key',) + fieldnames):
-        lab = Label(form, text=label)
+    for (i, field) in enumerate(('key',) + fieldnames):
+        Label(form, text=field).grid(row=i, column=0)
         ent = Entry(form)
-        lab.grid(row=ix, column=0)
-        ent.grid(row=ix, column=1)
-        entries[label] = ent
-
+        ent.grid(row=i, column=1)
+        entries[field] = ent
     Button(window, text='Fetch', command=fetch).pack(side=LEFT)
     Button(window, text='Update', command=update).pack(side=LEFT)
     Button(window, text='Quit', command=window.quit).pack(side=RIGHT)
-
     return window
 
 def fetch():
@@ -48,7 +44,7 @@ def update():
         setattr(record, field, eval(entries[field].get()))
     db[key] = record
 
-db = shelve.open(filename)
+db = shelve.open(shelvename)
 window = makeWidgets()
 window.mainloop()
 db.close()
